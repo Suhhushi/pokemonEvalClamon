@@ -1,4 +1,4 @@
-package org.suhhushi.pokemonevalclamont;
+package org.suhhushi.pokemonevalclamont.model;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;

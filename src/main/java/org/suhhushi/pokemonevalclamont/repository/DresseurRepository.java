@@ -1,7 +1,7 @@
-package org.suhhushi.pokemonevalclamont;
+package org.suhhushi.pokemonevalclamont.repository;
 
-import com.ligue.pokemon.model.Dresseur;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.suhhushi.pokemonevalclamont.model.Dresseur;
 
 import java.util.List;
 import java.util.Optional;

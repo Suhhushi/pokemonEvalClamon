@@ -1,15 +1,15 @@
-package com.ligue.pokemon.service;
+package org.suhhushi.pokemonevalclamont;
 
-import com.ligue.pokemon.dto.DresseurDto;
-import com.ligue.pokemon.exception.DresseurNotFoundException;
-import com.ligue.pokemon.model.Dresseur;
-import com.ligue.pokemon.model.Pokemon;
-import com.ligue.pokemon.repository.DresseurRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.suhhushi.pokemonevalclamont.dto.DresseurDto;
+import org.suhhushi.pokemonevalclamont.model.Dresseur;
+import org.suhhushi.pokemonevalclamont.model.Pokemon;
+import org.suhhushi.pokemonevalclamont.repository.DresseurRepository;
+import org.suhhushi.pokemonevalclamont.service.DresseurService;
 
 import java.util.Optional;
 

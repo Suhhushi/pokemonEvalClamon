@@ -1,11 +1,11 @@
-package org.suhhushi.pokemonevalclamont;
+package org.suhhushi.pokemonevalclamont.service;
 
-import com.ligue.pokemon.dto.DresseurDto;
-import com.ligue.pokemon.exception.DresseurNotFoundException;
-import com.ligue.pokemon.model.Dresseur;
-import com.ligue.pokemon.model.Pokemon;
-import com.ligue.pokemon.repository.DresseurRepository;
 import org.springframework.stereotype.Service;
+import org.suhhushi.pokemonevalclamont.DresseurNotFoundException;
+import org.suhhushi.pokemonevalclamont.dto.DresseurDto;
+import org.suhhushi.pokemonevalclamont.model.Dresseur;
+import org.suhhushi.pokemonevalclamont.model.Pokemon;
+import org.suhhushi.pokemonevalclamont.repository.DresseurRepository;
 
 import java.util.List;
 

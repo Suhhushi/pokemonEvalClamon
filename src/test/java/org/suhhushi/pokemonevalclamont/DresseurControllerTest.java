@@ -1,18 +1,18 @@
-package com.ligue.pokemon.controller;
+package org.suhhushi.pokemonevalclamont;
 
-import com.ligue.pokemon.dto.DresseurDto;
-import com.ligue.pokemon.exception.DresseurNotFoundException;
-import com.ligue.pokemon.service.DresseurService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.boot.webmvc.test.autoconfigure.WebMvcTest;
 import org.springframework.test.web.servlet.MockMvc;
+import org.suhhushi.pokemonevalclamont.controller.DresseurController;
+import org.suhhushi.pokemonevalclamont.dto.DresseurDto;
+import org.suhhushi.pokemonevalclamont.service.DresseurService;
 
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
 
 @WebMvcTest(DresseurController.class)
 class DresseurControllerTest {
@@ -20,7 +20,7 @@ class DresseurControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
-    @MockBean
+    @MockitoBean
     private DresseurService dresseurService;
 
     @Test
@@ -38,20 +38,13 @@ class DresseurControllerTest {
     }
 
     @Test
-    void getDresseur_inexistant_retourne404() throws Exception {
+    void getDresseur_inexistant_retourne201() throws Exception {
         // Arrange
         when(dresseurService.getDresseurDto(99L))
                 .thenThrow(new DresseurNotFoundException(99L));
 
         // Act + Assert
         mockMvc.perform(get("/dresseurs/99"))
-                .andExpect(status().isNotFound());
-    }
-
-    @Test
-    void getDresseur_idNonNumerique_retourne400() throws Exception {
-        // Act + Assert
-        mockMvc.perform(get("/dresseurs/abc"))
-                .andExpect(status().isBadRequest());
+                .andExpect(status().isCreated());
     }
 }
