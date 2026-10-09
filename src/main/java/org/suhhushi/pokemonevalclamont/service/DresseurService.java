@@ -52,12 +52,19 @@ public class DresseurService {
     }
 
     private int bonusDiversite(List<Pokemon> pokemons) {
-        long typesDistincts = pokemons.stream().map(Pokemon::getType).distinct().count();
+        long typesDistincts = pokemons
+                .stream()
+                .map(Pokemon::getType)
+                .distinct()
+                .count();
         return typesDistincts >= NB_TYPES_POUR_BONUS ? BONUS_DIVERSITE : 0;
     }
 
     private int bonusElite(List<Pokemon> pokemons) {
-        long nbElites = pokemons.stream().filter(p -> p.getNiveau() >= NIVEAU_ELITE).count();
+        long nbElites = pokemons
+                .stream()
+                .filter(p -> p.getNiveau() >= NIVEAU_ELITE)
+                .count();
         return (int) nbElites * BONUS_ELITE;
     }
 }
