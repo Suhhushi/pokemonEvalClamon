@@ -69,13 +69,7 @@ src/test
 
 ## Installation
 
-### 1. Base de données (WAMP)
-
-1. Démarrer WAMP (MySQL actif).
-2. Les identifiants par défaut sont `root` sans mot de passe. Les modifier si besoin dans `src/main/resources/application.properties`.
-3. La base `pokemon_db` et les tables sont créées automatiquement au premier lancement.
-
-Données de démonstration (facultatif, à exécuter dans phpMyAdmin après le premier lancement) :
+### 1. Base de données
 
 ```sql
 USE pokemon_db;
